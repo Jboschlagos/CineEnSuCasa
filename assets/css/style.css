@@ -1,63 +1,148 @@
+* { box-sizing: border-box; }
+
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #111;
-  color: #fff;
-  margin: 0;
-  padding: 20px;
+  color: #eee;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.tmdb-logo img {
+  height: 28px;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 20px;
+  margin: 0;
+  font-weight: normal;
 }
 
-.buscador {
+main { padding: 20px; }
+
+.buscador, .acciones {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 input {
   padding: 8px;
-  width: 250px;
+  width: 240px;
 }
 
 button {
-  padding: 8px 15px;
+  padding: 8px 12px;
+  background: #222;
+  color: #eee;
+  border: 1px solid #444;
   cursor: pointer;
+}
+
+button:hover {
+  background: #333;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 20px;
 }
 
 .card {
-  background: #1c1c1c;
-  border-radius: 6px;
+  background: #1a1a1a;
+  border-radius: 4px;
   overflow: hidden;
-  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
-  height: 270px;
+  height: 250px;
   object-fit: cover;
 }
 
 .card-content {
   padding: 10px;
+  font-size: 14px;
 }
 
 .card h3 {
-  font-size: 16px;
   margin: 0 0 5px;
+  font-size: 15px;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 13px;
 }
 
 .card a {
-  color: #4da6ff;
+  color: #6fa8dc;
+  font-size: 12px;
   text-decoration: none;
-  font-size: 13px;
+}
+
+.card .acciones {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.card .acciones button {
+  flex: 1;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 12px;
+  border-top: 1px solid #333;
+}
+
+.footer a {
+  color: #6fa8dc;
+  text-decoration: none;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background: #1a1a1a;
+  max-width: 400px;
+  margin: 10% auto;
+  padding: 20px;
+  position: relative;
+}
+
+#cerrar {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.tmdb-logo {
+  height: 36px;
+  width: auto;
+  display: block;
 }

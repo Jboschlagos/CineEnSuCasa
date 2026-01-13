@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>Buscador de Películas</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Cine Don Jorge</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
 
-  <h1>Buscador de Películas</h1>
+  <header class="header">
+    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+      alt="TMDB logo" class="tmdb-logo" />
+    <h1>Cine don jorge</h1>
+  </header>
 
-  <div class="buscador">
-    <input type="text" id="busqueda" placeholder="Buscar película...">
-    <button id="btnBuscar">Buscar</button>
+
+  <main>
+    <section class="buscador">
+      <input type="text" id="busqueda" placeholder="Buscar película...">
+      <button id="btnBuscar">Buscar</button>
+    </section>
+
+    <section class="acciones">
+      <button onclick="mostrarVistas()">Vistas</button>
+      <button onclick="mostrarFavoritas()">Favoritas</button>
+    </section>
+
+    <section id="resultados" class="grid"></section>
+
+    <section class="listas">
+      <ul id="lista"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Powered by <a href="https://www.themoviedb.org" target="_blank">TMDB</a>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="cerrar">&times;</span>
+      <div id="modal-body"></div>
+    </div>
   </div>
 
-  <div id="resultados" class="grid"></div>
-
-  <script src="script.js"></script>
+  <script src="./assets/js/app.js"></script>
 </body>
+
 </html>
